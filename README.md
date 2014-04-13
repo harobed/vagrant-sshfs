@@ -22,6 +22,17 @@ By default it will use the Vagrant ssh username. You can change that with the fo
 
 `config.sshfs.username = "theusername"`
 
+## Issues
+
+### Connection reset by peer
+
+In case you are getting "Connection reset by peer" errors, it might be the case that you already have a host configuration under your `~/.ssh/know_hosts` for the given ip, and you are using the same ip with a different machine. If that is the case, you can set a `StrictHostKeyChecking no` under that ip to skip the check:
+
+```
+Host 127.0.0.1
+StrictHostKeyChecking no
+```
+
 ## Contributing
 
 If you have issues or ideas, please contribute! You can create an issue throught Github, or send a Pull Request.
